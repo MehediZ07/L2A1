@@ -71,3 +71,23 @@ function printBookDetails(book: Book): void {
     console.log(output);
 }
 
+function getUniqueValues(array1: (number | string)[], array2: (number | string)[]): (number | string)[] {
+    const output : (number | string)[] = [];
+    const combineBothArrays : (number | string)[] = [...array1, ...array2];
+
+    function exists(input: number | string, arr: (number | string)[]): boolean {
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i] === input) return true;
+        }
+        return false;
+    }
+
+    for (let i = 0; i < combineBothArrays.length; i++) {
+        if (!exists(combineBothArrays[i], output)) {
+            output.push(combineBothArrays[i]);
+        }
+    }
+
+    return output;
+}
+
