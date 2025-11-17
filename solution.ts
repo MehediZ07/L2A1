@@ -30,7 +30,10 @@ class Person {
     }
 
     getDetails(): string {
-        return `'Name: ${this.name}, Age: ${this.age}'`;
+        const output = `'Name: ${this.name}, Age: ${this.age}'`;
+        return output;
     }
 }
+
+
 
