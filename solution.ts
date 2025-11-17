@@ -7,3 +7,14 @@ function formatValue (value: string | number | boolean): string | number | boole
     }
     return !value;
 }
+
+function getLength(value: string | any[]): number {
+    if (typeof value === "string") {
+        return value.length;
+    } 
+    if (Array.isArray(value)) {
+        return value.length;
+    }
+    throw new Error("Input must be a string or an array");
+}
+
