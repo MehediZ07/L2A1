@@ -4,8 +4,10 @@ function formatValue (value: string | number | boolean): string | number | boole
     } 
     if (typeof value === "number") {
         return value * 10;
-    }
+    } if (typeof value === "boolean") {
     return !value;
+    }
+    throw new Error("Input must be a string, number, or boolean");
 }
 
 function getLength(value: string | any[]): number {
@@ -17,4 +19,3 @@ function getLength(value: string | any[]): number {
     }
     throw new Error("Input must be a string or an array");
 }
-
