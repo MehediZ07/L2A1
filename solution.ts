@@ -72,7 +72,7 @@ function printBookDetails(book: Book): void {
 }
 
 function getUniqueValues(array1: (number | string)[], array2: (number | string)[]): (number | string)[] {
-    const output : (number | string)[] = [];
+    let output : (number | string)[] = [];
     const combineBothArrays : (number | string)[] = [...array1, ...array2];
 
     function exists(input: number | string, arr: (number | string)[]): boolean {
@@ -84,7 +84,7 @@ function getUniqueValues(array1: (number | string)[], array2: (number | string)[
 
     for (let i = 0; i < combineBothArrays.length; i++) {
         if (!exists(combineBothArrays[i], output)) {
-            output.push(combineBothArrays[i]);
+            output = [...output, combineBothArrays[i]];
         }
     }
 
