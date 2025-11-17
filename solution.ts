@@ -35,5 +35,20 @@ class Person {
     }
 }
 
+type Item = {
+    title: string;
+    rating: number;
+};
 
+function filterByRating(items: Item[]): Item[] {
+
+    const output: Item[] = items.filter(item => item.rating >= 4);
+    return output;
+}
+
+const books: Item[] = [
+    { title: 'Book A', rating: 4.5 },
+    { title: 'Book B', rating: 3.2 },
+    { title: 'Book C', rating: 5.0 },
+];
 
