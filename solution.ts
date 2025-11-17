@@ -19,3 +19,18 @@ function getLength(value: string | any[]): number {
     }
     throw new Error("Input must be a string or an array");
 }
+
+class Person {
+    name: string;
+    age: number;
+
+    constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+    }
+
+    getDetails(): string {
+        return `'Name: ${this.name}, Age: ${this.age}'`;
+    }
+}
+
